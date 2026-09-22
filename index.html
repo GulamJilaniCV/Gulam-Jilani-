@@ -2,553 +2,1228 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Gulam Jilani | Professional Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gulam Jilani | Pharmacy Professional</title>
+
+<meta name="description" content="Gulam Jilani — Pharmacy Professional, Merchant Onboarding, Customer Service and Sales Operations.">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
 
-html{scroll-behavior:smooth}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root{
+    --black:#050505;
+    --black2:#0b0b0b;
+    --gold:#ffc400;
+    --gold2:#ffdc62;
+    --white:#f7f7f7;
+    --muted:#a7a7a7;
+    --red:#8f101b;
+    --red2:#c21f2b;
+    --line:rgba(255,196,0,.22);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:#080808;
-color:#fff;
-overflow-x:hidden;
-line-height:1.6
+    font-family:Inter,Arial,sans-serif;
+    background:
+        radial-gradient(circle at 15% 30%,rgba(255,196,0,.08),transparent 28%),
+        radial-gradient(circle at 90% 70%,rgba(170,0,20,.10),transparent 30%),
+        var(--black);
+    color:var(--white);
+    overflow-x:hidden;
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+        linear-gradient(120deg,transparent 0%,rgba(255,196,0,.025) 50%,transparent 100%);
+    z-index:-1;
 }
 
 a{
-text-decoration:none;
-color:inherit
+    color:inherit;
+    text-decoration:none;
 }
 
-/* 3D BACKGROUND */
-
-.scene{
-position:fixed;
-inset:0;
-z-index:-2;
-overflow:hidden;
-background:
-radial-gradient(circle at 20% 20%,rgba(255,196,0,.12),transparent 28%),
-radial-gradient(circle at 80% 70%,rgba(210,20,35,.15),transparent 30%),
-#080808
+.container{
+    width:min(1180px,92%);
+    margin:auto;
 }
 
-.orb{
-position:absolute;
-border-radius:50%;
-filter:blur(2px);
-transform-style:preserve-3d;
-animation:float 8s ease-in-out infinite
-}
-
-.orb.one{
-width:260px;
-height:260px;
-background:rgba(255,196,0,.08);
-top:10%;
-left:-80px
-}
-
-.orb.two{
-width:350px;
-height:350px;
-background:rgba(190,15,35,.08);
-right:-120px;
-bottom:5%;
-animation-delay:-3s
-}
-
-.orb.three{
-width:120px;
-height:120px;
-background:rgba(255,255,255,.06);
-right:30%;
-top:20%;
-animation-delay:-5s
-}
-
-@keyframes float{
-0%,100%{transform:translate3d(0,0,0) rotate(0)}
-50%{transform:translate3d(30px,-40px,80px) rotate(15deg)}
-}
-
-/* NAVIGATION */
+/* ================= NAVBAR ================= */
 
 nav{
-position:sticky;
-top:0;
-z-index:100;
-height:72px;
-padding:0 7%;
-display:flex;
-align-items:center;
-justify-content:space-between;
-background:rgba(8,8,8,.82);
-backdrop-filter:blur(18px);
-border-bottom:1px solid rgba(255,196,0,.22)
+    position:sticky;
+    top:0;
+    z-index:1000;
+    height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 4%;
+    background:rgba(5,5,5,.82);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,196,0,.15);
 }
 
-.logo{
-font-size:25px;
-font-weight:900;
-letter-spacing:2px;
-color:#ffc400;
-text-shadow:0 0 20px rgba(255,196,0,.3)
+.nav-logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
-.navlinks{
-display:flex;
-gap:24px;
-font-size:13px;
-font-weight:600
+.logo-mini{
+    width:48px;
+    height:48px;
+    border:1px solid var(--gold);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    color:var(--gold);
+    font-size:18px;
+    font-weight:900;
+    box-shadow:0 0 25px rgba(255,196,0,.18);
 }
 
-.navlinks a{
-color:#ddd;
-transition:.3s
+.logo-mini:before{
+    content:"⚕";
+    position:absolute;
+    top:-12px;
+    font-size:20px;
+    background:var(--black);
+    padding:0 4px;
 }
 
-.navlinks a:hover{
-color:#ffc400;
-text-shadow:0 0 12px rgba(255,196,0,.5)
+.nav-links{
+    display:flex;
+    gap:34px;
 }
 
-/* HERO */
+.nav-links a{
+    font-size:14px;
+    color:#ccc;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+.nav-btn{
+    border:1px solid var(--gold);
+    padding:11px 18px;
+    border-radius:30px;
+    color:var(--gold);
+    font-weight:700;
+    font-size:13px;
+}
+
+/* ================= HERO ================= */
 
 .hero{
-min-height:calc(100vh - 72px);
-padding:80px 7%;
-display:flex;
-align-items:center;
-position:relative;
-perspective:1200px
+    min-height:calc(100vh - 78px);
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    gap:50px;
+    position:relative;
+    padding:80px 0;
 }
 
-.hero-content{
-max-width:900px;
-transform-style:preserve-3d;
-animation:heroIn 1.2s ease both
+.hero-left{
+    position:relative;
+    z-index:2;
 }
 
-@keyframes heroIn{
-from{
-opacity:0;
-transform:translateY(50px) rotateX(12deg)
-}
-to{
-opacity:1;
-transform:none
-}
+.eyebrow{
+    color:#b7a35f;
+    letter-spacing:5px;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:20px;
 }
 
-.badge{
-display:inline-block;
-padding:9px 17px;
-border:1px solid #ffc400;
-border-radius:50px;
-color:#ffc400;
-font-size:12px;
-font-weight:800;
-letter-spacing:1px;
-margin-bottom:25px;
-background:rgba(255,196,0,.05);
-box-shadow:0 0 25px rgba(255,196,0,.08)
+.hero h1{
+    font-size:clamp(48px,7vw,88px);
+    line-height:.95;
+    letter-spacing:-4px;
+    margin-bottom:24px;
 }
 
-h1{
-font-size:clamp(50px,11vw,100px);
-line-height:.95;
-letter-spacing:-5px;
-margin-bottom:25px;
-text-shadow:0 15px 40px rgba(0,0,0,.5)
+.hero h1 span{
+    color:var(--gold);
 }
 
-h1 span{
-color:#ffc400;
-text-shadow:
-0 0 25px rgba(255,196,0,.35),
-0 10px 30px rgba(0,0,0,.5)
+.hero-title{
+    font-size:20px;
+    line-height:1.55;
+    font-weight:600;
+    max-width:650px;
 }
 
-.hero-text{
-max-width:760px;
-font-size:20px;
-color:#c7c7c7;
-margin-bottom:32px
+.hero-description{
+    color:#aaa;
+    line-height:1.8;
+    max-width:600px;
+    margin-top:18px;
 }
 
-.buttons{
-display:flex;
-flex-wrap:wrap;
-gap:10px
+.hero-actions{
+    display:flex;
+    gap:14px;
+    margin-top:32px;
+    flex-wrap:wrap;
 }
 
 .btn{
-display:inline-block;
-padding:14px 23px;
-border-radius:9px;
-border:1px solid #ffc400;
-font-weight:800;
-transition:.3s;
-position:relative;
-overflow:hidden
+    padding:14px 22px;
+    border-radius:10px;
+    font-weight:700;
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    transition:.3s;
 }
 
-.primary{
-background:#ffc400;
-color:#090909;
-box-shadow:0 10px 30px rgba(255,196,0,.18)
+.btn-primary{
+    background:var(--gold);
+    color:#090909;
+    box-shadow:0 10px 35px rgba(255,196,0,.18);
 }
 
-.secondary{
-color:#ffc400;
-background:rgba(255,196,0,.03)
+.btn-secondary{
+    border:1px solid var(--gold);
+    color:var(--gold);
 }
 
 .btn:hover{
-transform:translateY(-5px) scale(1.02);
-box-shadow:0 15px 35px rgba(255,196,0,.2)
+    transform:translateY(-4px);
 }
 
-/* FLOATING 3D CARD */
-
-.hero-card{
-position:absolute;
-right:8%;
-top:25%;
-width:250px;
-height:300px;
-border:1px solid rgba(255,196,0,.3);
-border-radius:24px;
-background:linear-gradient(
-145deg,
-rgba(255,196,0,.12),
-rgba(180,10,30,.08)
-);
-backdrop-filter:blur(15px);
-box-shadow:
-20px 30px 70px rgba(0,0,0,.6),
-inset 0 0 40px rgba(255,255,255,.03);
-transform:rotateY(-18deg) rotateX(8deg);
-animation:cardFloat 6s ease-in-out infinite
-}
-
-@keyframes cardFloat{
-0%,100%{transform:rotateY(-18deg) rotateX(8deg) translateY(0)}
-50%{transform:rotateY(-10deg) rotateX(3deg) translateY(-20px)}
-}
-
-.card-glow{
-position:absolute;
-inset:25px;
-border-radius:18px;
-border:1px solid rgba(255,196,0,.15);
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center
-}
-
-.card-glow div{
-font-size:52px;
-font-weight:900;
-color:#ffc400;
-text-shadow:0 0 30px rgba(255,196,0,.4)
-}
-
-/* SECTIONS */
-
-section{
-max-width:1150px;
-margin:auto;
-padding:100px 7%
-}
-
-.section-label{
-font-size:12px;
-font-weight:900;
-letter-spacing:3px;
-color:#ffc400;
-margin-bottom:9px
-}
-
-h2{
-font-size:44px;
-line-height:1.1;
-margin-bottom:25px
-}
-
-h2 span{color:#ffc400}
-
-.about{
-font-size:18px;
-color:#c4c4c4;
-max-width:850px
-}
-
-/* STATS */
+/* HERO STATS */
 
 .stats{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px;
-margin-top:40px
+    display:flex;
+    gap:0;
+    margin-top:42px;
+    max-width:650px;
 }
 
 .stat{
-padding:28px;
-text-align:center;
-border:1px solid rgba(255,196,0,.22);
-border-radius:18px;
-background:linear-gradient(
-145deg,
-rgba(255,196,0,.07),
-rgba(255,255,255,.025)
-);
-box-shadow:0 20px 50px rgba(0,0,0,.3);
-transition:.35s
+    flex:1;
+    padding:0 25px;
+    border-left:1px solid rgba(255,255,255,.15);
 }
 
-.stat:hover{
-transform:translateY(-8px) rotateX(4deg);
-border-color:#ffc400
+.stat:first-child{
+    padding-left:0;
+    border-left:0;
 }
 
 .stat strong{
-display:block;
-font-size:34px;
-color:#ffc400
+    display:block;
+    color:var(--gold);
+    font-size:30px;
+    margin-bottom:5px;
 }
 
-.stat small{color:#999}
-
-/* MOBILE */
-
-@media(max-width:800px){
-
-nav{
-height:65px;
-padding:0 6%
+.stat span{
+    color:#aaa;
+    font-size:13px;
 }
 
-.navlinks{
-display:none
+/* ================= 3D EMBLEM ================= */
+
+.hero-visual{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    perspective:1000px;
 }
 
-.hero{
-min-height:calc(100vh - 65px);
-padding:65px 6%
+.emblem{
+    width:390px;
+    height:390px;
+    border-radius:50%;
+    border:1px solid rgba(255,196,0,.6);
+    background:
+        radial-gradient(circle at 35% 25%,rgba(255,196,0,.18),transparent 30%),
+        radial-gradient(circle at 70% 75%,rgba(160,0,20,.25),transparent 40%),
+        #0b0b0b;
+    box-shadow:
+        0 0 70px rgba(255,196,0,.12),
+        inset 0 0 60px rgba(255,255,255,.03);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    transform:rotateY(-12deg) rotateX(5deg);
+    animation:float 5s ease-in-out infinite;
+    position:relative;
 }
 
-.hero-card{
-display:none
+.emblem:before{
+    content:"";
+    position:absolute;
+    inset:-15px;
+    border-radius:50%;
+    border:1px solid rgba(255,196,0,.12);
 }
 
-h1{
-font-size:58px;
-letter-spacing:-3px
+.medical-symbol{
+    font-size:105px;
+    color:var(--gold);
+    filter:drop-shadow(0 0 20px rgba(255,196,0,.35));
 }
 
-.hero-text{
-font-size:17px
+.emblem h2{
+    font-size:74px;
+    letter-spacing:-6px;
 }
+
+.emblem p{
+    color:#9d8d55;
+    letter-spacing:5px;
+    font-size:9px;
+    margin-top:5px;
+}
+
+@keyframes float{
+    0%,100%{transform:rotateY(-12deg) rotateX(5deg) translateY(0);}
+    50%{transform:rotateY(12deg) rotateX(-3deg) translateY(-15px);}
+}
+
+/* ================= SECTION ================= */
 
 section{
-padding:70px 6%
+    padding:105px 0;
+    border-top:1px solid rgba(255,196,0,.12);
 }
 
-h2{
-font-size:34px
+.section-number{
+    color:var(--gold);
+    letter-spacing:4px;
+    font-size:12px;
+    font-weight:800;
+    margin-bottom:15px;
 }
 
-.stats{
-grid-template-columns:1fr
+.section-title{
+    font-size:clamp(38px,5vw,62px);
+    letter-spacing:-3px;
+    margin-bottom:45px;
 }
 
+.section-title span{
+    color:var(--gold);
 }
+
+/* ================= EXPERIENCE ================= */
+
+.experience-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:30px;
+}
+
+.quote{
+    color:#777;
+    font-style:italic;
+    max-width:360px;
+    line-height:1.6;
+}
+
+.experience-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.experience-card{
+    min-height:520px;
+    padding:25px;
+    border:1px solid rgba(255,196,0,.22);
+    border-radius:20px;
+    background:
+        linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.008));
+    position:relative;
+    overflow:hidden;
+    transition:.45s;
+    transform-style:preserve-3d;
+}
+
+.experience-card:before{
+    content:"";
+    position:absolute;
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    background:rgba(255,196,0,.08);
+    filter:blur(30px);
+    top:-60px;
+    right:-60px;
+}
+
+.experience-card:hover{
+    transform:translateY(-12px) rotateX(3deg);
+    border-color:var(--gold);
+    box-shadow:0 25px 60px rgba(0,0,0,.45);
+}
+
+.card-number{
+    width:38px;
+    height:38px;
+    border:1px solid var(--gold);
+    border-radius:9px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--gold);
+    font-weight:800;
+    margin-bottom:25px;
+}
+
+.company-logo{
+    width:64px;
+    height:64px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:22px;
+    font-size:25px;
+    font-weight:900;
+    background:#161616;
+    border:1px solid rgba(255,196,0,.3);
+    color:var(--gold);
+}
+
+.experience-card h3{
+    font-size:20px;
+    line-height:1.25;
+    margin-bottom:8px;
+}
+
+.role{
+    color:var(--gold);
+    font-weight:700;
+    font-size:14px;
+    line-height:1.4;
+    margin-bottom:17px;
+}
+
+.date{
+    color:#999;
+    font-size:12px;
+    margin-bottom:20px;
+}
+
+.experience-card ul{
+    padding-left:18px;
+    color:#bbb;
+    font-size:12px;
+    line-height:1.65;
+}
+
+.experience-card li{
+    margin-bottom:9px;
+}
+
+.tags{
+    position:absolute;
+    bottom:22px;
+    left:25px;
+    right:25px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+}
+
+.tag{
+    border:1px solid rgba(255,196,0,.35);
+    color:#d5bb66;
+    padding:6px 9px;
+    border-radius:20px;
+    font-size:9px;
+}
+
+/* ================= SKILLS ================= */
+
+.skills-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.skill{
+    padding:14px 18px;
+    border:1px solid rgba(255,196,0,.28);
+    border-radius:30px;
+    background:rgba(255,255,255,.025);
+    color:#ddd;
+    font-size:13px;
+    transition:.3s;
+}
+
+.skill:hover{
+    background:var(--gold);
+    color:#050505;
+    transform:translateY(-4px);
+}
+
+/* ================= ABOUT ================= */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.about-text{
+    color:#aaa;
+    line-height:1.9;
+    font-size:16px;
+}
+
+.identity-box{
+    border:1px solid rgba(255,196,0,.2);
+    padding:35px;
+    border-radius:24px;
+    background:linear-gradient(145deg,#111,#080808);
+}
+
+.identity-logo{
+    width:95px;
+    height:95px;
+    border-radius:24px;
+    border:1px solid var(--gold);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:32px;
+    color:var(--gold);
+    margin-bottom:25px;
+    box-shadow:0 0 30px rgba(255,196,0,.12);
+}
+
+.identity-box h3{
+    font-size:27px;
+    margin-bottom:12px;
+}
+
+.identity-box p{
+    color:#999;
+    line-height:1.7;
+}
+
+/* ================= EDUCATION ================= */
+
+.education-card{
+    padding:35px;
+    border:1px solid rgba(255,196,0,.2);
+    border-radius:22px;
+    background:rgba(255,255,255,.02);
+}
+
+.education-card h3{
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.education-card strong{
+    color:var(--gold);
+}
+
+.education-card p{
+    color:#999;
+    line-height:1.7;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.contact-card{
+    padding:30px;
+    border:1px solid rgba(255,196,0,.2);
+    border-radius:20px;
+    background:#0b0b0b;
+}
+
+.contact-card small{
+    color:#777;
+    display:block;
+    margin-bottom:10px;
+}
+
+.contact-card a{
+    color:var(--gold);
+    word-break:break-word;
+}
+
+.contact-card:hover{
+    border-color:var(--gold);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    border-top:1px solid rgba(255,196,0,.18);
+    padding:45px 0;
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+    align-items:center;
+}
+
+.footer-logo{
+    font-size:30px;
+    font-weight:900;
+    color:var(--gold);
+}
+
+.footer-text{
+    color:#777;
+    font-size:12px;
+    line-height:1.7;
+}
+
+.footer-message{
+    color:#9b8950;
+    font-size:10px;
+    letter-spacing:3px;
+}
+
+/* ================= ANIMATION ================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:opacity .8s ease,transform .8s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:1000px){
+
+    .experience-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero-description{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-actions,
+    .stats{
+        justify-content:center;
+    }
+
+    .hero-visual{
+        order:-1;
+    }
+
+    .emblem{
+        width:280px;
+        height:280px;
+    }
+
+    .medical-symbol{
+        font-size:70px;
+    }
+
+    .emblem h2{
+        font-size:55px;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:650px){
+
+    nav{
+        height:65px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .nav-btn{
+        padding:9px 13px;
+        font-size:11px;
+    }
+
+    .hero{
+        padding:65px 0;
+    }
+
+    .hero h1{
+        font-size:52px;
+        letter-spacing:-3px;
+    }
+
+    .hero-title{
+        font-size:16px;
+    }
+
+    .stats{
+        flex-direction:column;
+        gap:20px;
+        text-align:left;
+    }
+
+    .stat{
+        border-left:2px solid var(--gold);
+        padding-left:15px;
+    }
+
+    .stat:first-child{
+        border-left:2px solid var(--gold);
+        padding-left:15px;
+    }
+
+    .experience-header{
+        display:block;
+    }
+
+    .quote{
+        margin-bottom:30px;
+    }
+
+    .experience-grid{
+        grid-template-columns:1fr;
+    }
+
+    .experience-card{
+        min-height:0;
+        padding-bottom:100px;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    section{
+        padding:75px 0;
+    }
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="scene">
-<div class="orb one"></div>
-<div class="orb two"></div>
-<div class="orb three"></div>
-</div>
+<!-- ================= NAVIGATION ================= -->
 
 <nav>
 
-<div class="logo">GJ</div>
+    <a href="#home" class="nav-logo">
 
-<div class="navlinks">
-<a href="#about">About</a>
-<a href="#experience">Experience</a>
-<a href="#skills">Skills</a>
-<a href="#education">Education</a>
-<a href="#contact">Contact</a>
-</div>
+        <div class="logo-mini">
+            GJ
+        </div>
+
+    </a>
+
+    <div class="nav-links">
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+
+    </div>
+
+    <a href="#contact" class="nav-btn">
+        Contact Me
+    </a>
 
 </nav>
 
-<header class="hero">
 
-<div class="hero-content">
+<!-- ================= HERO ================= -->
 
-<div class="badge">
-PHARMACY • OPERATIONS • MERCHANT ONBOARDING
-</div>
+<main id="home">
 
-<h1>
-Gulam <span>Jilani</span>
-</h1>
+<section class="hero container">
 
-<p class="hero-text">
-Pharmacy Professional | Merchant Onboarding |
-Customer Service | Sales Operations
-</p>
+    <div class="hero-left reveal">
 
-<p class="hero-text">
-D.Pharm professional with experience across hospital
-pharmacy, retail pharmacy operations, merchant onboarding
-and customer-facing roles.
-</p>
+        <div class="eyebrow">
+            HEALTHCARE · OPERATIONS · IMPACT
+        </div>
 
-<div class="buttons">
+        <h1>
+            GULAM <span>JILANI</span>
+        </h1>
 
-<a class="btn primary" href="#experience">
-Explore My Journey
-</a>
+        <div class="hero-title">
+            Pharmacy Professional |
+            Merchant Onboarding |
+            Customer Service |
+            Sales Operations
+        </div>
 
-<a class="btn secondary"
-href="mailto:jilanigulam231@gmail.com">
-Email Me
-</a>
+        <p class="hero-description">
+            Dedicated to pharmacy operations, healthcare service,
+            merchant onboarding and meaningful customer experiences.
+        </p>
 
-</div>
+        <div class="stats">
 
-</div>
+            <div class="stat">
+                <strong>4</strong>
+                <span>Professional Roles</span>
+            </div>
 
-<div class="hero-card">
+            <div class="stat">
+                <strong>D.Pharm</strong>
+                <span>Professional Qualification</span>
+            </div>
 
-<div class="card-glow">
-<div>GJ</div>
-</div>
+            <div class="stat">
+                <strong>3+</strong>
+                <span>Years Across Healthcare & Operations</span>
+            </div>
 
-</div>
+        </div>
 
-</header>
+        <div class="hero-actions">
+
+            <a href="mailto:jilanigulam231@gmail.com"
+               class="btn btn-primary">
+                ✉ Get In Touch
+            </a>
+
+            <a href="#experience"
+               class="btn btn-secondary">
+                View Experience
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-visual reveal">
+
+        <div class="emblem">
+
+            <div class="medical-symbol">
+                ⚕
+            </div>
+
+            <h2>GJ</h2>
+
+            <p>
+                PHARMACY · HEALTHCARE
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
 
 <section id="about">
 
-<div class="section-label">01 — PROFILE</div>
+<div class="container">
 
-<h2>More Than <span>One Profession</span></h2>
+    <div class="section-number">
+        01 — PROFILE
+    </div>
 
-<p class="about">
-D.Pharm professional with experience across hospital pharmacy,
-retail pharmacy operations, merchant onboarding, and
-customer-facing roles. Skilled in prescription handling,
-medication dispensing, patient counselling, inventory
-management, merchant acquisition, KYC support and digital
-payment setup.
-</p>
+    <h2 class="section-title">
+        Professional <span>Identity</span>
+    </h2>
 
-<div class="stats">
+    <div class="about-grid">
 
-<div class="stat">
-<strong>3+</strong>
-<small>Years of Professional Experience</small>
-</div>
+        <div class="about-text reveal">
 
-<div class="stat">
-<strong>D.Pharm</strong>
-<small>Professional Qualification</small>
-</div>
+            <p>
+                D.Pharm professional with experience across hospital
+                pharmacy, retail pharmacy operations, merchant
+                onboarding and customer-facing roles.
+            </p>
 
-<div class="stat">
-<strong>4</strong>
-<small>Professional Experiences</small>
-</div>
+            <br>
+
+            <p>
+                My professional journey combines healthcare knowledge
+                with customer service, operations, merchant acquisition,
+                KYC support, digital payment solutions and field sales.
+            </p>
+
+            <br>
+
+            <p>
+                I believe professional growth comes from discipline,
+                continuous learning and delivering reliable service
+                to people.
+            </p>
+
+        </div>
+
+
+        <div class="identity-box reveal">
+
+            <div class="identity-logo">
+                ⚕
+            </div>
+
+            <h3>
+                Pharmacy × Operations
+            </h3>
+
+            <p>
+                Healthcare knowledge combined with operational
+                execution, communication, customer service and
+                relationship management.
+            </p>
+
+        </div>
+
+    </div>
 
 </div>
 
 </section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
 <section id="experience">
 
-<div class="section-label">02 — EXPERIENCE</div>
+<div class="container">
 
-<h2>Professional <span>Journey</span></h2>
+    <div class="experience-header">
 
-<div class="experience">
+        <div>
 
-<div class="card">
-<h3>Merchant Acquisition & Onboarding Executive</h3>
-<div class="company">PhonePe</div>
-<div class="date">March 2022 – July 2023</div>
+            <div class="section-number">
+                02 — EXPERIENCE
+            </div>
+
+            <h2 class="section-title">
+                Professional <span>Journey</span>
+            </h2>
+
+        </div>
+
+        <div class="quote">
+            “Different roles.
+            <br>
+            A common purpose —
+            people, service and better solutions.”
+        </div>
+
+    </div>
+
+
+    <div class="experience-grid">
+
+
+        <!-- PHONEPE -->
+
+        <article class="experience-card reveal">
+
+            <div class="card-number">
+                01
+            </div>
+
+            <div class="company-logo">
+                P
+            </div>
+
+            <h3>
+                PhonePe
+            </h3>
+
+            <div class="role">
+                Merchant Acquisition & Onboarding Executive
+            </div>
+
+            <div class="date">
+                March 2022 — July 2023
+            </div>
+
+            <ul>
+
+                <li>
+                    Acquired and onboarded merchants by approaching
+                    business owners and communicating payment services.
+                </li>
+
+                <li>
+                    Assisted merchants with registration, KYC
+                    documentation and QR-code activation.
+                </li>
+
+                <li>
+                    Explained digital payment solutions and supported
+                    merchant activation and follow-up.
+                </li>
+
+                <li>
+                    Maintained merchant relationships and coordinated
+                    with internal teams.
+                </li>
+
+                <li>
+                    Worked toward merchant acquisition and
+                    onboarding targets.
+                </li>
+
+            </ul>
+
+            <div class="tags">
+
+                <span class="tag">Field Sales</span>
+                <span class="tag">KYC</span>
+                <span class="tag">Digital Payments</span>
+
+            </div>
+
+        </article>
+
+
+        <!-- HIND HOSPITAL -->
+
+        <article class="experience-card reveal">
+
+            <div class="card-number">
+                02
+            </div>
+
+            <div class="company-logo">
+                ⚕
+            </div>
+
+            <h3>
+                Hind Hospital
+            </h3>
+
+            <div class="role">
+                Clinical Pharmacist
+            </div>
+
+            <div class="date">
+                August 2023 — February 2025
+            </div>
+
+            <ul>
+
+                <li>
+                    Supported day-to-day hospital pharmacy operations,
+                    including prescription processing and dispensing.
+                </li>
+
+                <li>
+                    Reviewed prescriptions and prepared medicines
+                    according to prescribed requirements.
+                </li>
+
+                <li>
+                    Counselled patients regarding medication use,
+                    dosage instructions and general precautions.
+                </li>
+
+                <li>
+                    Maintained drug storage, stock organization
+                    and inventory control.
+                </li>
+
+                <li>
+                    Coordinated pharmacy requirements with hospital staff.
+                </li>
+
+            </ul>
+
+            <div class="tags">
+              <span class="tag">Hospital Pharmacy</span>
+<span class="tag">Patient Care</span>
+<span class="tag">Inventory</span>
+
+</div>
+
+</article>
+
+
+<!-- CHC -->
+
+<article class="experience-card reveal">
+
+<div class="card-number">03</div>
+
+<div class="company-logo">+</div>
+
+<h3>Community Health Centre</h3>
+
+<div class="role">
+Pharmacy Intern
+</div>
+
+<div class="date">
+February 2025 — May 2025
+</div>
 
 <ul>
-<li>Acquired and onboarded merchants by approaching business owners and communicating PhonePe payment services.</li>
-<li>Assisted merchants with registration, KYC documentation and PhonePe QR-code activation.</li>
-<li>Explained digital payment solutions and supported merchant activation and follow-up.</li>
-<li>Maintained merchant relationships and coordinated with internal teams to resolve onboarding queries.</li>
-<li>Worked toward merchant acquisition and onboarding targets in a field-sales environment.</li>
+
+<li>
+Assisted with prescription handling,
+medicine dispensing and patient interaction.
+</li>
+
+<li>
+Supported medicine stock management and
+proper storage procedures.
+</li>
+
+<li>
+Assisted with day-to-day pharmacy service
+activities.
+</li>
+
+<li>
+Interacted with patients in a healthcare
+environment.
+</li>
+
 </ul>
+
+<div class="tags">
+
+<span class="tag">Dispensing</span>
+<span class="tag">Patient Interaction</span>
+<span class="tag">Stock Management</span>
+
 </div>
 
-<div class="card">
-<h3>Clinical Pharmacist</h3>
-<div class="company">Hind Hospital, Bahraich</div>
-<div class="date">August 2023 – February 2025</div>
+</article>
+ <!-- ZENO HEALTH -->
+
+<article class="experience-card reveal">
+
+<div class="card-number">04</div>
+
+<div class="company-logo">Z+</div>
+
+<h3>Zippin Pharma Pvt. Ltd.</h3>
+
+<div class="role">
+Sales Service Associate · Zeno Health
+</div>
+
+<div class="date">
+June 2025 — October 2025
+</div>
 
 <ul>
-<li>Supported day-to-day hospital pharmacy operations, including prescription processing and medication dispensing.</li>
-<li>Reviewed prescriptions and prepared medicines according to prescribed requirements.</li>
-<li>Counselled patients regarding medication use, dosage instructions and general precautions.</li>
-<li>Maintained drug storage, stock organization and inventory control.</li>
-<li>Coordinated pharmacy requirements with hospital staff to support timely medicine availability.</li>
+
+<li>
+Handled retail pharmacy operations,
+customer service and billing.
+</li>
+
+<li>
+Supported prescription-related requirements
+and medicine availability.
+</li>
+
+<li>
+Supported inventory management.
+</li>
+
+<li>
+Assisted customers with pharmacy-related
+requirements.
+</li>
+
+<li>
+Supported smooth day-to-day store operations.
+</li>
+
 </ul>
+
+<div class="tags">
+
+<span class="tag">Retail Pharmacy</span>
+<span class="tag">Customer Service</span>
+<span class="tag">Operations</span>
+
 </div>
 
-<div class="card">
-<h3>Pharmacy Intern</h3>
-<div class="company">Community Health Centre, Nanpara</div>
-<div class="date">February 2025 – May 2025</div>
+</article>
 
-<ul>
-<li>Assisted with prescription handling, medicine dispensing and patient interaction.</li>
-<li>Supported medicine stock management and proper storage procedures.</li>
-<li>Assisted with day-to-day pharmacy service activities in a healthcare environment.</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>Sales Service Associate</h3>
-<div class="company">Zippin Pharma Pvt. Ltd. (Zeno Health), Mumbai</div>
-<div class="date">June 2025 – October 2025</div>
-
-<ul>
-<li>Handled retail pharmacy operations, customer service, billing and prescription-related requirements.</li>
-<li>Supported inventory management and medicine availability.</li>
-<li>Assisted customers with pharmacy-related requirements while maintaining professional service.</li>
-<li>Supported smooth day-to-day store operations.</li>
-</ul>
 </div>
 
 </div>
 
-</section>
+</section>  
+  <!-- ================= SKILLS ================= -->
 
 <section id="skills">
 
-<div class="section-label">03 — EXPERTISE</div>
+<div class="container">
 
-<h2>Core <span>Skills</span></h2>
+<div class="section-number">
+03 — EXPERTISE
+</div>
 
-<div class="skills">
+<h2 class="section-title">
+Core <span>Skills</span>
+</h2>
+
+<div class="skills-grid reveal">
 
 <div class="skill">Hospital Pharmacy Operations</div>
 <div class="skill">Prescription Handling</div>
@@ -572,96 +1247,200 @@ payment setup.
 
 </div>
 
-</section>
-
-<section id="education">
-
-<div class="section-label">04 — EDUCATION</div>
-
-<h2>Academic <span>Foundation</span></h2>
-
-<div class="card">
-
-<h3>Diploma in Pharmacy (D.Pharm)</h3>
-
-<div class="company">
-Ameer Hasan College of Pharmacy
 </div>
 
+</section>
+<!-- ================= EDUCATION ================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-number">
+04 — EDUCATION
+</div>
+
+<h2 class="section-title">
+Academic <span>Foundation</span>
+</h2>
+
+<div class="education-card reveal">
+
+<h3>
+Diploma in Pharmacy
+</h3>
+
 <p>
+<strong>D.Pharm</strong>
+</p>
+
+<p>
+Ameer Hasan College of Pharmacy,
 Nanpara, Bahraich, Uttar Pradesh
 </p>
 
 </div>
 
-</section>
-
-<section>
-
-<div class="section-label">05 — LANGUAGES</div>
-
-<h2>Communication <span>Skills</span></h2>
-
-<div class="skills">
-
-<div class="skill">English</div>
-<div class="skill">Hindi</div>
-<div class="skill">Urdu</div>
-
 </div>
 
 </section>
+<!-- ================= CONTACT ================= -->
+
 <section id="contact">
 
-<div class="section-label">06 — CONNECT</div>
+<div class="container">
 
-<div class="contact-box">
+<div class="section-number">
+05 — CONNECT
+</div>
 
-<h2>Let's Build Something <span>Great</span></h2>
+<h2 class="section-title">
+Let's <span>Connect</span>
+</h2>
 
-<p>
-Open to professional opportunities, collaborations and
-conversations across pharmacy, healthcare, operations
-and customer-focused roles.
-</p>
+<div class="contact-grid">
 
-<div class="buttons">
+<div class="contact-card reveal">
 
-<a class="btn primary"
-href="mailto:jilanigulam231@gmail.com">
-✉ Email Me
+<small>EMAIL</small>
+
+<a href="mailto:jilanigulam231@gmail.com">
+jilanigulam231@gmail.com
 </a>
 
-<a class="btn secondary"
+</div>
+
+<div class="contact-card reveal">
+
+<small>LINKEDIN</small>
+
+<a
 href="https://www.linkedin.com/in/gulam-jilani-15a461368/"
 target="_blank"
 rel="noopener">
-LinkedIn
+linkedin.com/in/gulam-jilani-15a461368
 </a>
 
-<a class="btn secondary"
+</div>
+
+<div class="contact-card reveal">
+
+<small>INSTAGRAM</small>
+
+<a
 href="https://www.instagram.com/aryan_shaikh.03/"
 target="_blank"
 rel="noopener">
-Instagram
+@aryan_shaikh.03
 </a>
+
+</div>
+
+<div class="contact-card reveal">
+
+<small>LANGUAGES</small>
+
+<div>
+English · Hindi · Urdu
+</div>
+
+</div>
 
 </div>
 
 </div>
 
 </section>
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-<div class="logo">GJ</div>
+<div class="container footer-inner">
 
-<p>
-© 2026 Gulam Jilani · Pharmacy Professional ·
-Merchant Onboarding · Customer Service · Sales Operations
-</p>
+<div>
+
+<div class="footer-logo">
+GJ
+</div>
+
+<div class="footer-text">
+Pharmacy Professional · Healthcare · Operations
+<br>
+Mumbai, Maharashtra
+</div>
+
+</div>
+
+<div class="footer-message">
+SMALL STEPS · HEALTHIER PEOPLE · BRIGHTER TOMORROW
+</div>
+
+</div>
 
 </footer>
+
+
+<script>
+
+/* Scroll reveal */
+
+const observer = new IntersectionObserver(
+entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.classList.add("visible");
+}
+
+});
+
+},
+{
+threshold:0.12
+}
+);
+
+document
+.querySelectorAll(".reveal")
+.forEach(el => observer.observe(el));
+
+
+/* 3D experience-card movement */
+
+document
+.querySelectorAll(".experience-card")
+.forEach(card => {
+
+card.addEventListener("mousemove", e => {
+
+const rect = card.getBoundingClientRect();
+
+const x = e.clientX - rect.left;
+const y = e.clientY - rect.top;
+
+const rotateY =
+((x / rect.width) - .5) * 8;
+
+const rotateX =
+((y / rect.height) - .5) * -8;
+
+card.style.transform =
+`translateY(-10px)
+rotateX(${rotateX}deg)
+rotateY(${rotateY}deg)`;
+
+});
+
+card.addEventListener("mouseleave", () => {
+
+card.style.transform = "";
+
+});
+
+});
+
+</script>
 
 </body>
 </html>
