@@ -2,69 +2,205 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Gulam Jilani | Healthcare & Pharmaceutical Professional</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Gulam Jilani | Portfolio</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+font-family:Arial,sans-serif;
+background:#071a1c;
+color:#f5ffff;
+line-height:1.6
 }
-
-html {
-    scroll-behavior: smooth;
+nav{
+position:sticky;top:0;z-index:10;
+padding:18px 7%;
+background:#071a1cf2;
+border-bottom:1px solid #245055;
+display:flex;justify-content:space-between;align-items:center
 }
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #071a1c;
-    color: #f5ffff;
-    line-height: 1.6;
+.logo{font-size:22px;font-weight:bold;color:#63e6be}
+nav a{color:#d8eeee;text-decoration:none;margin-left:18px;font-size:14px}
+nav a:hover{color:#63e6be}
+.hero{
+min-height:88vh;padding:80px 7%;
+display:flex;align-items:center;
+background:linear-gradient(135deg,#071a1c,#0d3438)
 }
-
-a {
-    color: inherit;
-    text-decoration: none;
+.hero div{max-width:850px}
+.badge{
+display:inline-block;color:#63e6be;
+border:1px solid #63e6be;border-radius:30px;
+padding:7px 14px;margin-bottom:22px
 }
-
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(7, 26, 28, 0.95);
-    border-bottom: 1px solid #1f4548;
-    padding: 18px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+h1{font-size:clamp(45px,10vw,80px);line-height:1.05}
+h1 span,h2 span{color:#63e6be}
+.hero p{
+font-size:20px;color:#b9d2d3;
+max-width:700px;margin:22px 0 30px
 }
-
-.logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: #63e6be;
+.btn{
+display:inline-block;padding:13px 20px;
+border:1px solid #63e6be;border-radius:8px;
+text-decoration:none;margin:5px
 }
-
-.nav-links {
-    display: flex;
-    gap: 22px;
-    list-style: none;
+.primary{background:#63e6be;color:#071a1c}
+.secondary{color:#63e6be}
+section{padding:70px 7%;max-width:1150px;margin:auto}
+h2{font-size:36px;margin-bottom:25px}
+p{color:#b9d2d3}
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:18px
 }
-
-.nav-links a {
-    color: #d5eeee;
-    font-size: 14px;
+.card{
+background:#0d292d;
+border:1px solid #245055;
+border-radius:12px;
+padding:23px
 }
-
-.nav-links a:hover {
-    color: #63e6be;
+.card h3{color:#63e6be;margin-bottom:8px}
+.skills{display:flex;flex-wrap:wrap;gap:10px}
+.skill{
+background:#0d292d;
+border:1px solid #245055;
+padding:9px 15px;
+border-radius:25px
 }
+.contact{text-align:center}
+footer{
+text-align:center;padding:25px;
+border-top:1px solid #245055;
+color:#8eaaac
+}
+@media(max-width:650px){
+nav{padding:15px 5%}
+nav .links{display:none}
+.hero{padding:65px 6%}
+section{padding:55px 6%}
+.hero p{font-size:17px}
+h2{font-size:30px}
+}
+</style>
+</head>
 
-.hero {
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    padding: 70px 8%;
-   
+<body>
+
+<nav>
+<div class="logo">GJ</div>
+<div class="links">
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<header class="hero">
+<div>
+<div class="badge">Healthcare & Pharmaceutical Professional</div>
+<h1>Gulam <span>Jilani</span></h1>
+<p>
+D.Pharm professional with experience in healthcare,
+pharmaceutical operations, pharmacy services and retail operations.
+</p>
+<a class="btn primary" href="#experience">View Experience</a>
+<a class="btn secondary" href="#contact">Contact Me</a>
+</div>
+</header>
+
+<section id="about">
+<h2>About <span>Me</span></h2>
+<p>
+I am a Diploma in Pharmacy professional interested in healthcare,
+pharmaceutical operations, technology and continuous professional growth.
+This website presents my career profile, skills, experience and projects.
+</p>
+</section>
+
+<section id="experience">
+<h2>My <span>Experience</span></h2>
+<div class="cards">
+<div class="card">
+<h3>Pharmacy & Healthcare</h3>
+<p>
+Practical exposure to pharmacy workflows, healthcare services,
+medication handling and professional responsibilities.
+</p>
+</div>
+<div class="card">
+<h3>Pharmaceutical Operations</h3>
+<p>
+Experience with retail pharmacy operations, customer service,
+storeoperations, customer service and pharmaceutical
+business processes.
+</p>
+</div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Professional <span>Skills</span></h2>
+
+<div class="skills">
+<div class="skill">Pharmacy Operations</div>
+<div class="skill">Healthcare Operations</div>
+<div class="skill">Pharmaceutical Knowledge</div>
+<div class="skill">Retail Operations</div>
+<div class="skill">Customer Service</div>
+<div class="skill">Communication</div>
+<div class="skill">Teamwork</div>
+<div class="skill">Problem Solving</div>
+</div>
+</section>
+
+<section id="projects">
+<h2>My <span>Projects</span></h2>
+
+<div class="cards">
+<div class="card">
+<h3>Healthcare Project</h3>
+<p>
+A practical healthcare project completed during professional
+training and internship experience.
+</p>
+</div>
+
+<div class="card">
+<h3>Professional Portfolio</h3>
+<p>
+A personal portfolio website showcasing my professional journey,
+skills, projects and career development.
+</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2><span>Education</span></h2>
+
+<div class="card">
+<h3>Diploma in Pharmacy (D.Pharm)</h3>
+<p>Pharmacy professional qualification.</p>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<h2>Let's <span>Connect</span></h2>
+<p>Interested in professional opportunities and collaboration?</p>
+
+<a class="btn primary" href="mailto:your-email@example.com">
+Email Me
+</a>
+</section>
+
+<footer>
+© 2026 Gulam Jilani · Professional Portfolio
+</footer>
+
+</body>
+    </html>
