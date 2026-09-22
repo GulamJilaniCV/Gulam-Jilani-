@@ -650,7 +650,58 @@ section{
         white-space:nowrap;
     }
 }
+/* FINAL MOBILE HERO FIX */
+@media(max-width:750px){
+    .profile-stage{
+        touch-action:pan-y !important;
+        overflow:visible !important;
+        height:460px !important;
+    }
 
+    .profile-photo-wrap{
+        margin:0 auto !important;
+        transform:translateY(-35px) !important;
+    }
+
+    .profile-photo{
+        object-position:center top !important;
+    }
+
+    .profile-360{
+        display:none !important;
+    }
+}/* FINAL PHOTO DESIGN */
+@media(max-width:750px){
+
+    .profile-photo-wrap{
+        width:260px !important;
+        height:330px !important;
+        margin:0 auto !important;
+        transform:translateY(-45px) !important;
+        border-radius:28px !important;
+        overflow:hidden !important;
+        z-index:50 !important;
+    }
+
+    .profile-photo{
+        width:100% !important;
+        height:100% !important;
+        object-fit:cover !important;
+        object-position:center top !important;
+        border-radius:28px !important;
+        mask-image:none !important;
+        -webkit-mask-image:none !important;
+        display:block !important;
+        opacity:1 !important;
+        visibility:visible !important;
+    }
+
+    .profile-360{
+        display:none !important;
+        visibility:hidden !important;
+    }
+
+}
 </style>
 
 </head>
