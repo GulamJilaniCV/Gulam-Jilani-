@@ -2392,6 +2392,75 @@ function floatPortrait(){
 
 floatPortrait();
 
+</script> <script>
+const profile360 = document.getElementById("profile3D");
+const profileImage = profile360.querySelector(".profile-photo");
+
+const profileViews = [
+    "profile.jpg",
+    "profile-45.jpg",
+    "profile-90.jpg",
+    "profile-135.jpg",
+    "profile-180.jpg",
+    "profile-225.jpg",
+    "profile-270.jpg",
+    "profile-315.jpg"
+];
+
+let currentView = 0;
+let dragging360 = false;
+let lastX = 0;
+let accumulated = 0;
+
+function showProfileView(index){
+    currentView =
+        (index + profileViews.length) %
+        profileViews.length;
+
+    profileImage.src = profileViews[currentView];
+}
+
+profile360.addEventListener("pointerdown", function(e){
+    dragging360 = true;
+    lastX = e.clientX;
+    accumulated = 0;
+    profile360.setPointerCapture(e.pointerId);
+});
+
+profile360.addEventListener("pointermove", function(e){
+
+    if(!dragging360) return;
+
+    const movement = e.clientX - lastX;
+    accumulated += movement;
+
+    if(Math.abs(accumulated) > 25){
+
+        if(accumulated > 0){
+            showProfileView(currentView - 1);
+        }else{
+            showProfileView(currentView + 1);
+        }
+
+        accumulated = 0;
+    }
+
+    lastX = e.clientX;
+});
+
+profile360.addEventListener("pointerup", function(e){
+    dragging360 = false;
+
+    try{
+        profile360.releasePointerCapture(e.pointerId);
+    }catch(error){}
+});
+
+profile360.addEventListener("pointercancel", function(){
+    dragging360 = false;
+});
+
+showProfileView(0);
 </script>
 
 
