@@ -213,6 +213,11 @@
             transition:
                 0.3s ease;
         }
+        .nav-links a::before {
+    content: "•";
+    margin-right: 6px;
+    color: var(--gold);
+        }
 
 
         .nav-links a:hover {
@@ -512,7 +517,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: emblemFloat 4s ease-in-out infinite;
+    animation: none;
 }
 
 .emblem-ring {
@@ -2342,7 +2347,25 @@
             revealObserver.observe(element);
 
         });
+const emblem = document.querySelector('.pharmacy-emblem');
 
+if (emblem) {
+    let targetRotation = 0;
+    let currentRotation = 0;
+
+    window.addEventListener('deviceorientation', (event) => {
+        const gamma = event.gamma || 0;
+        targetRotation = Math.max(-30, Math.min(30, gamma));
+    });
+
+    function rotateEmblem() {
+        currentRotation += (targetRotation - currentRotation) * 0.12;
+        emblem.style.transform = `rotate(${currentRotation}deg)`;
+        requestAnimationFrame(rotateEmblem);
+    }
+
+    rotateEmblem();
+        }
     </script>
 
 
