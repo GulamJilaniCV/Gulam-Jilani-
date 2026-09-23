@@ -1593,7 +1593,7 @@
                 href="#home"
                 class="logo"
             >
-                GJ
+                G
             </a>
 
 
@@ -1712,63 +1712,75 @@
 
             <div class="emblem-wrapper">
 <div class="pharmacy-emblem">
-    <svg class="emblem-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-label="Pharmacy Professional emblem">
+    <svg class="emblem-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
 
-        <defs>
-            <path id="topArc" d="M58 200 A142 142 0 0 0 342 200" />
-            <path id="bottomArc" d="M78 225 A122 122 0 0 1 322 225" />
-        </defs>
+    <defs>
+        <path id="topArc"
+              d="M78 225 A122 122 0 0 1 322 225" />
 
-        <circle class="emblem-ring outer-ring"
-                cx="200" cy="200" r="176"/>
+        <path id="bottomArc"
+              d="M58 200 A142 142 0 0 0 342 200" />
+    </defs>
 
-        <circle class="emblem-ring inner-ring"
-                cx="200" cy="200" r="162"/>
+    <!-- Double gold rings -->
+    <circle class="emblem-ring outer-ring"
+            cx="200" cy="200" r="176"/>
 
-        <text class="emblem-arc-text">
-            <textPath href="#topArc"
-                      startOffset="50%"
-                      text-anchor="middle">
-                PHARMACY PROFESSIONAL
-            </textPath>
-        </text>
+    <circle class="emblem-ring inner-ring"
+            cx="200" cy="200" r="162"/>
 
-        <text class="emblem-arc-text bottom-text">
-            <textPath href="#bottomArc"
-                      startOffset="50%"
-                      text-anchor="middle">
-                HEALTHCARE · OPERATIONS
-            </textPath>
-        </text>
+    <!-- Top text -->
+    <text class="emblem-arc-text">
+        <textPath href="#topArc"
+                  startOffset="50%"
+                  text-anchor="middle">
+            PHARMACY PROFESSIONAL
+        </textPath>
+    </text>
 
-        <circle class="emblem-dot"
-                cx="49" cy="200" r="3"/>
+    <!-- Bottom text -->
+    <text class="emblem-arc-text bottom-text">
+        <textPath href="#bottomArc"
+                  startOffset="50%"
+                  text-anchor="middle">
+            HEALTHCARE · OPERATIONS
+        </textPath>
+    </text>
 
-        <circle class="emblem-dot"
-                cx="351" cy="200" r="3"/>
+    <!-- Side dots -->
+    <circle class="emblem-dot" cx="49" cy="200" r="3"/>
+    <circle class="emblem-dot" cx="351" cy="200" r="3"/>
 
-        <g class="asclepius">
+    <!-- Rod of Asclepius -->
+    <g class="asclepius">
 
-            <path class="staff"
-                  d="M200 112
-                     C200 150 200 175 200 200
-                     C200 230 200 270 200 308" />
+        <!-- Staff -->
+        <path class="staff"
+              d="M200 108
+                 C200 145 200 175 200 200
+                 C200 235 200 270 200 310" />
 
-            <path class="snake"
-                  d="M200 135
-                     C175 150 175 170 200 184
-                     C225 198 225 218 200 232
-                     C175 246 175 266 200 280" />
+        <!-- Snake -->
+        <path class="snake"
+              d="M200 125
+                 C168 138 168 165 200 181
+                 C232 197 232 220 200 236
+                 C168 252 168 275 200 291" />
 
-            <ellipse class="snake-head"
-                     cx="200" cy="128"
-                     rx="10" ry="8"/>
+        <!-- Snake head -->
+        <ellipse class="snake-head"
+                 cx="200"
+                 cy="120"
+                 rx="12"
+                 ry="9"/>
 
-            <circle class="snake-eye"
-                    cx="204" cy="126"
-                    r="1.7"/>
+        <!-- Snake eye -->
+        <circle class="snake-eye"
+                cx="204"
+                cy="118"
+                r="2"/>
 
-        </g>
+    </g>
 
     </svg>
 </div>
