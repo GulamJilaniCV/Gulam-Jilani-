@@ -1711,27 +1711,67 @@
 
 
             <div class="emblem-wrapper">
+<div class="pharmacy-emblem">
+    <svg class="emblem-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-label="Pharmacy Professional emblem">
 
-                <div class="pharmacy-emblem">
+        <defs>
+            <path id="topArc" d="M58 200 A142 142 0 0 0 342 200" />
+            <path id="bottomArc" d="M78 225 A122 122 0 0 1 322 225" />
+        </defs>
 
-                    <div class="emblem-content">
+        <circle class="emblem-ring outer-ring"
+                cx="200" cy="200" r="176"/>
 
-                        <div class="pharmacy-symbol">
-                            ⚕
-                        </div>
+        <circle class="emblem-ring inner-ring"
+                cx="200" cy="200" r="162"/>
 
-                        <div class="emblem-title">
-                            PHARMACY PROFESSIONAL
-                        </div>
+        <text class="emblem-arc-text">
+            <textPath href="#topArc"
+                      startOffset="50%"
+                      text-anchor="middle">
+                PHARMACY PROFESSIONAL
+            </textPath>
+        </text>
 
-                        <div class="emblem-subtitle">
-                            HEALTHCARE · OPERATIONS
-                        </div>
+        <text class="emblem-arc-text bottom-text">
+            <textPath href="#bottomArc"
+                      startOffset="50%"
+                      text-anchor="middle">
+                HEALTHCARE · OPERATIONS
+            </textPath>
+        </text>
 
-                    </div>
+        <circle class="emblem-dot"
+                cx="49" cy="200" r="3"/>
 
-                </div>
+        <circle class="emblem-dot"
+                cx="351" cy="200" r="3"/>
 
+        <g class="asclepius">
+
+            <path class="staff"
+                  d="M200 112
+                     C200 150 200 175 200 200
+                     C200 230 200 270 200 308" />
+
+            <path class="snake"
+                  d="M200 135
+                     C175 150 175 170 200 184
+                     C225 198 225 218 200 232
+                     C175 246 175 266 200 280" />
+
+            <ellipse class="snake-head"
+                     cx="200" cy="128"
+                     rx="10" ry="8"/>
+
+            <circle class="snake-eye"
+                    cx="204" cy="126"
+                    r="1.7"/>
+
+        </g>
+
+    </svg>
+</div>
             </div>
 
         </div>
