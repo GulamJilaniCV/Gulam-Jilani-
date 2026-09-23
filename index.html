@@ -2347,25 +2347,43 @@
             revealObserver.observe(element);
 
         });
-const emblem = document.querySelector('.pharmacy-emblem');
+const compassEmblem = document.querySelector('.pharmacy-emblem');
 
-if (emblem) {
-    let targetRotation = 0;
-    let currentRotation = 0;
+if (compassEmblem) {
+    let targetHeading = 0;
+    let currentHeading = 0;
+    let firstReading = true;
+    let baseHeading = 0;
 
-    window.addEventListener('deviceorientation', (event) => {
-        const gamma = event.gamma || 0;
-        targetRotation = Math.max(-30, Math.min(30, gamma));
-    });
+    window.addEventListener('deviceorientationabsolute', (event) => {
+        if (event.alpha === null) return;
 
-    function rotateEmblem() {
-        currentRotation += (targetRotation - currentRotation) * 0.12;
-        emblem.style.transform = `rotate(${currentRotation}deg)`;
-        requestAnimationFrame(rotateEmblem);
+        let heading = 360 - event.alpha;
+
+        if (firstReading) {
+            baseHeading = heading;
+            firstReading = false;
+        }
+
+        let relativeHeading = heading - baseHeading;
+
+        if (relativeHeading > 180) relativeHeading -= 360;
+        if (relativeHeading < -180) relativeHeading += 360;
+
+        targetHeading = relativeHeading;
+    }, true);
+
+    function rotateCompass() {
+        currentHeading += (targetHeading - currentHeading) * 0.08;
+
+        compassEmblem.style.transform =
+            `rotate(${currentHeading}deg)`;
+
+        requestAnimationFrame(rotateCompass);
     }
 
-    rotateEmblem();
-        }
+    rotateCompass();
+}
     </script>
 
 
