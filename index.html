@@ -490,143 +490,99 @@
         /* =====================================================
            PHARMACY EMBLEM
         ===================================================== */
+        
 
-        .emblem-wrapper {
+.emblem-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-            display:
-                flex;
+.pharmacy-emblem {
+    width: 340px;
+    height: 340px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: emblemGlow 4s ease-in-out infinite;
+}
 
-            justify-content:
-                center;
+.emblem-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
 
-            align-items:
-                center;
-        }
+.emblem-ring {
+    fill: none;
+    stroke: var(--gold);
+}
 
+.outer-ring {
+    stroke-width: 2;
+    opacity: 0.95;
+}
 
-        .pharmacy-emblem {
+.inner-ring {
+    stroke-width: 1.2;
+    opacity: 0.65;
+}
 
-            width:
-                290px;
+.emblem-dot {
+    fill: var(--gold);
+}
 
-            height:
-                290px;
+.emblem-arc-text {
+    fill: var(--gold);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 4px;
+}
 
-            border:
-                1px solid rgba(212,175,55,0.48);
+.bottom-text {
+    font-size: 13px;
+    letter-spacing: 3.5px;
+}
 
-            border-radius:
-                50%;
+.asclepius {
+    transform-origin: 200px 200px;
+}
 
-            position:
-                relative;
+.staff {
+    fill: none;
+    stroke: var(--gold);
+    stroke-width: 8;
+    stroke-linecap: round;
+}
 
-            display:
-                flex;
+.snake {
+    fill: none;
+    stroke: var(--gold);
+    stroke-width: 7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
 
-            align-items:
-                center;
+.snake-head {
+    fill: var(--gold);
+}
 
-            justify-content:
-                center;
+.snake-eye {
+    fill: var(--maroon);
+}
 
-            animation:
-                emblemGlow 4s ease-in-out infinite;
-        }
-
-
-        .pharmacy-emblem::before {
-
-            content:
-                "";
-
-            position:
-                absolute;
-
-            width:
-                205px;
-
-            height:
-                205px;
-
-            border:
-                1px solid rgba(212,175,55,0.22);
-
-            border-radius:
-                50%;
-        }
-
-
-        .emblem-content {
-
-            text-align:
-                center;
-
-            position:
-                relative;
-
-            z-index:
-                2;
-        }
-
-
-        .pharmacy-symbol {
-
-            font-family:
-                Georgia,
-                serif;
-
-            font-size:
-                65px;
-
-            line-height:
-                1;
-
-            color:
-                var(--gold);
-        }
-
-
-        .emblem-title {
-
-            margin-top:
-                17px;
-
-            font-family:
-                Arial,
-                sans-serif;
-
-            font-size:
-                10px;
-
-            letter-spacing:
-                2.5px;
-
-            color:
-                var(--gold);
-        }
-
-
-        .emblem-subtitle {
-
-            margin-top:
-                5px;
-
-            font-family:
-                Arial,
-                sans-serif;
-
-            font-size:
-                8px;
-
-            letter-spacing:
-                1.8px;
-
-            color:
-                var(--muted);
-        }
-
-
+.pharmacy-emblem::after {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow:
+        0 0 35px rgba(212,175,55,0.10),
+        inset 0 0 25px rgba(212,175,55,0.04);
+}
         /* =====================================================
            SECTIONS
         ===================================================== */
@@ -1563,10 +1519,10 @@
             .pharmacy-emblem {
 
                 width:
-                    225px;
+                    300px;
 
                 height:
-                    225px;
+                    300px;
             }
 
 
