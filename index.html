@@ -505,6 +505,7 @@
         
 
 .emblem-wrapper {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1749,10 +1750,10 @@
 <img src="pharmacy-emblem.png"
      class="emblem-svg"
      alt="Pharmacy Professional Emblem">
-<img src="compass-needle.png"
+</div>
+     <img src="compass-needle.png"
      class="compass-needle"
      alt="">
-</div>
             </div>
 
         </div>
@@ -2390,9 +2391,8 @@ if (compassEmblem) {
         currentHeading += (targetHeading - currentHeading) * 0.08;
 
     
-        document.querySelector('.compass-needle').style.transform =
-    `translate(-50%, -50%) rotate(${currentHeading}deg)`;
-
+        document.querySelector('.pharmacy-emblem').style.transform =
+    `rotate(${currentHeading}deg)`;
         requestAnimationFrame(rotateCompass);
     }
 
