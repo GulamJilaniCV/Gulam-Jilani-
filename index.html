@@ -2715,6 +2715,111 @@ if (compassEmblem) {
 
     rotateCompass();
 }
+        <script>
+(function () {
+
+    "use strict";
+
+    /* ==========================================
+       BASIC COPY PROTECTION
+    ========================================== */
+
+    // Disable right-click
+    document.addEventListener("contextmenu", function (event) {
+        event.preventDefault();
+    });
+
+
+    // Disable text selection
+    document.addEventListener("selectstart", function (event) {
+        event.preventDefault();
+    });
+
+
+    // Disable dragging
+    document.addEventListener("dragstart", function (event) {
+        event.preventDefault();
+    });
+
+
+    // Disable copy
+    document.addEventListener("copy", function (event) {
+        event.preventDefault();
+    });
+
+
+    // Disable cut
+    document.addEventListener("cut", function (event) {
+        event.preventDefault();
+    });
+
+
+    // Disable common keyboard shortcuts
+    document.addEventListener("keydown", function (event) {
+
+        const key = event.key.toLowerCase();
+
+        /* Ctrl / CMD shortcuts */
+        if (event.ctrlKey || event.metaKey) {
+
+            const blocked = [
+                "c", // Copy
+                "x", // Cut
+                "u", // View Source
+                "s", // Save
+                "p", // Print
+                "a"  // Select All
+            ];
+
+            if (blocked.includes(key)) {
+                event.preventDefault();
+                return false;
+            }
+        }
+
+
+        /* F12 */
+        if (event.key === "F12") {
+            event.preventDefault();
+            return false;
+        }
+
+
+        /* Ctrl + Shift + I */
+        if (
+            (event.ctrlKey || event.metaKey) &&
+            event.shiftKey &&
+            key === "i"
+        ) {
+            event.preventDefault();
+            return false;
+        }
+
+
+        /* Ctrl + Shift + J */
+        if (
+            (event.ctrlKey || event.metaKey) &&
+            event.shiftKey &&
+            key === "j"
+        ) {
+            event.preventDefault();
+            return false;
+        }
+
+
+        /* Ctrl + Shift + C */
+        if (
+            (event.ctrlKey || event.metaKey) &&
+            event.shiftKey &&
+            key === "c"
+        ) {
+            event.preventDefault();
+            return false;
+        }
+
+    });
+
+})();
     </script>
 
 
