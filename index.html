@@ -1839,6 +1839,98 @@ nav {
 
         }
 
+   /* PORTRAIT MOBILE ONLY */
+@media screen and (max-width: 600px) and (orientation: portrait) {
+
+    .nav-inner {
+        min-height: 126px;
+
+        display: grid;
+
+        grid-template-columns: 64px 1fr 54px;
+        grid-template-rows: 62px 52px;
+
+        grid-template-areas:
+            "logo space button"
+            "links links links";
+
+        align-items: center;
+
+        gap: 0;
+
+        padding: 7px 9px;
+    }
+
+    .logo {
+        grid-area: logo;
+
+        width: 56px;
+        height: 56px;
+
+        flex: none;
+
+        font-size: 21px;
+    }
+
+    .nav-links {
+        grid-area: links;
+
+        width: 100%;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 2px;
+
+        overflow: visible;
+    }
+
+    .nav-links a {
+        flex: 1;
+
+        min-width: 0;
+
+        height: 48px;
+
+        padding: 3px 1px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 3px;
+
+        font-size: 9px;
+
+        white-space: nowrap;
+    }
+
+    .nav-icon {
+        font-size: 16px;
+    }
+
+    .nav-button {
+        grid-area: button;
+
+        width: 50px;
+        min-width: 50px;
+
+        height: 50px;
+
+        padding: 0;
+
+        border-radius: 50%;
+    }
+
+    .nav-button span:nth-child(2) {
+        display: none;
+    }
+} 
     </style>
 
 </head>
