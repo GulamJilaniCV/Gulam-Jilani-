@@ -2679,42 +2679,39 @@ nav {
 
         });
 const compassEmblem = document.querySelector('.pharmacy-emblem');
-
 if (compassEmblem) {
-    let targetHeading = 0;
-    let currentHeading = 0;
-    let firstReading = true;
-    let baseHeading = 0;
 
-    window.addEventListener('deviceorientationabsolute', (event) => {
-        if (event.alpha === null) return;
+    let targetRotation = 0;
+    let currentRotation = 0;
 
-        let heading = 360 - event.alpha;
+    window.addEventListener(
+        "deviceorientation",
+        function (event) {
 
-        if (firstReading) {
-            baseHeading = heading;
-            firstReading = false;
-        }
+            if (event.gamma === null || event.gamma === undefined) {
+                return;
+            }
 
-        let relativeHeading = heading;
+            // Left/right phone tilt
+            targetRotation = event.gamma;
 
-        if (relativeHeading > 180) relativeHeading -= 360;
-        if (relativeHeading < -180) relativeHeading += 360;
-
-        targetHeading = relativeHeading;
-    }, true);
+        },
+        true
+    );
 
     function rotateCompass() {
-        currentHeading += (targetHeading - currentHeading) * 0.08;
 
-    
-        document.querySelector('.pharmacy-emblem').style.transform =
-    `rotate(${currentHeading}deg)`;
+        currentRotation +=
+            (targetRotation - currentRotation) * 0.12;
+
+        compassEmblem.style.transform =
+            `rotate(${currentRotation}deg)`;
+
         requestAnimationFrame(rotateCompass);
     }
 
     rotateCompass();
-}
+}</script>
         <script>
 (function () {
 
