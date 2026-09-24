@@ -113,144 +113,324 @@
         /* =====================================================
            NAVIGATION
         ===================================================== */
+        /* =====================================================
+   NAVIGATION — LUXURY GOLD / BURGUNDY
+===================================================== */
 
-        nav {
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
-            position:
-                sticky;
+    padding: 12px 0;
 
-            top:
-                0;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(18, 3, 8, 0.96),
+            rgba(37, 7, 17, 0.94)
+        );
 
-            z-index:
-                1000;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
 
-            background:
-                rgba(37, 7, 17, 0.94);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
-            border-bottom:
-                1px solid var(--line);
-
-            backdrop-filter:
-                blur(14px);
-        }
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.30);
+}
 
 
-        .nav-inner {
+/* MAIN LUXURY BAR */
 
-            min-height:
-                76px;
+.nav-inner {
+    width: min(1400px, 94%);
+    min-height: 88px;
 
-            display:
-                flex;
+    margin: 0 auto;
 
-            align-items:
-                center;
+    display: flex;
+    align-items: center;
 
-            justify-content:
-                space-between;
+    gap: 18px;
 
-            gap:
-                30px;
-        }
-.logo {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 32px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: var(--gold-light);
-    text-decoration: none;
-    text-shadow:
-        0 0 6px rgba(240, 215, 122, 0.45),
-        0 0 16px rgba(212, 175, 55, 0.25);
-    transition: all 0.3s ease;
+    padding: 8px 14px;
+
+    border: 1px solid rgba(212, 175, 55, 0.42);
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(65, 20, 29, 0.78),
+            rgba(20, 3, 8, 0.88)
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        inset 0 -1px 0 rgba(212, 175, 55, 0.10),
+        0 0 25px rgba(212, 175, 55, 0.08),
+        0 18px 45px rgba(0, 0, 0, 0.28);
+}
+       .logo {
+    width: 74px;
+    height: 74px;
+
+    flex: 0 0 74px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     position: relative;
+
+    border-radius: 50%;
+
+    border: 2px solid var(--gold);
+
+    color: var(--gold-light);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 27px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(212,175,55,0.14),
+            rgba(37,7,17,0.45) 65%,
+            rgba(10,2,5,0.65)
+        );
+
+    text-shadow:
+        0 0 7px rgba(240,215,122,0.7),
+        0 0 18px rgba(212,175,55,0.35);
+
+    box-shadow:
+        0 0 8px rgba(212,175,55,0.55),
+        0 0 25px rgba(212,175,55,0.18),
+        inset 0 0 16px rgba(212,175,55,0.10);
+
+    transition: 0.35s ease;
+}
+
+.logo::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 6px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(240,215,122,0.72);
+
+    box-shadow:
+        inset 0 0 8px rgba(212,175,55,0.25);
 }
 
 .logo::after {
-    content: "";
-    display: block;
-    width: 26px;
-    height: 2px;
-    margin-top: 3px;
-    background: var(--gold);
-    box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
-}
-.logo:hover {
-    letter-spacing: 6px;
+    content: "✦";
+
+    position: absolute;
+
+    bottom: 7px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 7px;
+
+    color: var(--gold-light);
+
     text-shadow:
-        0 0 10px rgba(212, 175, 55, 0.45),
-        0 0 24px rgba(212, 175, 55, 0.2);
+        0 0 7px var(--gold);
 }
-       .nav-links {
 
-            display:
-                flex;
+.logo:hover {
+    transform: scale(1.04);
 
-            align-items:
-                center;
+    box-shadow:
+        0 0 12px rgba(212,175,55,0.75),
+        0 0 35px rgba(212,175,55,0.28),
+        inset 0 0 18px rgba(212,175,55,0.14);
+}
+        .nav-links {
+    flex: 1;
 
-            gap:
-                28px;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    gap: 4px;
+}
 
-        .nav-links a {
+.nav-links a {
+    position: relative;
 
-            font-family:
-                Arial,
-                sans-serif;
+    min-width: 92px;
+    min-height: 70px;
 
-            font-size:
-                14px;
+    padding: 8px 13px;
 
-            letter-spacing:
-                1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-            color:
-                var(--muted);
+    gap: 4px;
 
-            transition:
-                0.3s ease;
-        }
-        .nav-links a::before {
-    content: "•";
-    margin-right: 6px;
+    border-radius: 18px;
+
+    color: var(--muted);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 0.8px;
+
+    transition:
+        0.3s ease;
+}
+
+.nav-icon {
+    font-size: 21px;
+
+    line-height: 1;
+
     color: var(--gold);
-        }
 
+    text-shadow:
+        0 0 6px rgba(212,175,55,0.4);
 
-        .nav-links a:hover {
-            color: var(--gold-light);
-        }
+    transition:
+        0.3s ease;
+}
 
+.nav-links a:hover {
+    color: var(--gold-light);
 
-        .nav-button {
+    background:
+        rgba(212,175,55,0.08);
 
-            padding:
-                9px 18px;
+    box-shadow:
+        inset 0 0 18px rgba(212,175,55,0.05);
 
-            border:
-                1px solid var(--gold);
+    transform:
+        translateY(-1px);
+}
 
-            border-radius:
-                30px;
+.nav-links a:hover .nav-icon {
+    color: var(--gold-light);
 
-            color:
-                var(--gold) !important;
-        }
+    text-shadow:
+        0 0 10px rgba(240,215,122,0.8);
+}
 
+.nav-links a.active {
+    color: var(--cream);
 
-        .nav-button:hover {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(212,175,55,0.14),
+            rgba(212,175,55,0.035)
+        );
 
-            background:
-                var(--gold);
+    border:
+        1px solid rgba(212,175,55,0.22);
 
-            color:
-                var(--maroon) !important;
-        }
+    box-shadow:
+        inset 0 0 20px rgba(212,175,55,0.06),
+        0 0 15px rgba(212,175,55,0.05);
+}
 
+.nav-links a.active::after {
+    content: "";
 
+    position: absolute;
+
+    bottom: 5px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 58px;
+    height: 3px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gold-light),
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px var(--gold),
+        0 0 15px rgba(212,175,55,0.65);
+}
+       .nav-button {
+    min-width: 170px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 0 20px;
+
+    border: 1px solid var(--gold);
+    border-radius: 30px;
+
+    color: var(--gold-light);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212,175,55,0.10),
+            rgba(37,7,17,0.45)
+        );
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+
+    box-shadow:
+        inset 0 0 12px rgba(212,175,55,0.06),
+        0 0 10px rgba(212,175,55,0.10);
+
+    transition: 0.35s ease;
+}
+
+.nav-button:hover {
+    color: var(--maroon);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold-light),
+            var(--gold)
+        );
+
+    box-shadow:
+        0 0 12px rgba(240,215,122,0.65),
+        0 0 28px rgba(212,175,55,0.25);
+
+    transform: translateY(-1px);
+}
         /* =====================================================
            HERO
         ===================================================== */
@@ -1446,13 +1626,64 @@
 
         @media (max-width: 900px) {
 
+            .logo {
+    width: 58px;
+    height: 58px;
+
+    flex: 0 0 58px;
+
+    font-size: 22px;
+}
             .nav-links {
     display: flex;
     align-items: center;
-    gap: 14px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-            }
+    justify-content: center;
+
+    gap: 2px;
+
+    flex: 1;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+.nav-links::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-links a {
+    min-width: 60px;
+    min-height: 58px;
+
+    flex-shrink: 0;
+
+    padding: 5px;
+
+    font-size: 9px;
+
+    border-radius: 15px;
+}
+
+.nav-icon {
+    font-size: 17px;
+}
+
+.nav-button {
+    min-width: 48px;
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    padding: 0;
+
+    border-radius: 50%;
+}
+
+.nav-button span:nth-child(2) {
+    display: none;
+}
 
 
             .hero {
@@ -1619,63 +1850,60 @@
     <!-- =====================================================
          NAVIGATION
     ===================================================== -->
+<nav>
 
-    <nav>
+    <div class="container nav-inner">
 
-        <div class="container nav-inner">
+        <!-- CIRCULAR GJ LOGO -->
+        <a href="#home" class="logo" aria-label="Gulam Jilani">
+            GJ
+        </a>
 
-            <a
-                href="#home"
-                class="logo"
-            >
-                GJ
+        <!-- NAVIGATION LINKS -->
+        <div class="nav-links">
+
+            <a href="#home" class="active">
+                <span class="nav-icon">⌂</span>
+                <span>Home</span>
             </a>
 
+            <a href="#about">
+                <span class="nav-icon">♙</span>
+                <span>About</span>
+            </a>
 
-            <div class="nav-links">
+            <a href="#experience">
+                <span class="nav-icon">▣</span>
+                <span>Experience</span>
+            </a>
 
-                <a href="#home">
-                    Home
-                </a>
+            <a href="#skills">
+                <span class="nav-icon">⚙</span>
+                <span>Skills</span>
+            </a>
 
-                <a href="#about">
-                    About
-                </a>
+            <a href="#education">
+                <span class="nav-icon">◇</span>
+                <span>Education</span>
+            </a>
 
-                <a href="#experience">
-                    Experience
-                </a>
-
-                <a href="#skills">
-                    Skills
-                </a>
-
-                <a href="#education">
-                    Education
-                </a>
-
-                <a href="#languages">
-                    Languages
-                </a>
-
-                <a href="#contact">
-                    Contact
-                </a>
-
-                <a
-                    href="#contact"
-                    class="nav-button"
-                >
-                    Contact Me
-                </a>
-
-            </div>
+            <a href="#languages">
+                <span class="nav-icon">文</span>
+                <span>Languages</span>
+            </a>
 
         </div>
 
-    </nav>
+        <!-- CONTACT BUTTON -->
+        <a href="#contact" class="nav-button">
+            <span class="nav-icon">✉</span>
+            <span>Contact Me</span>
+            <span>›</span>
+        </a>
 
+    </div>
 
+</nav>
     <!-- =====================================================
          HERO
     ===================================================== -->
